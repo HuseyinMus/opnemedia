@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Calendar, Zap, TrendingUp, Target } from 'lucide-react';
+import { ArrowRight, Calendar, Zap, TrendingUp, Target, Sparkles, Rocket } from 'lucide-react';
 import { motion } from 'framer-motion';
 import AppointmentModal from './AppointmentModal';
 
@@ -10,361 +10,631 @@ const Hero = () => {
     { 
       src: '/Zapier_logo.svg.png', 
       alt: 'Zapier',
-      initialX: -100,
-      initialY: -50,
-      floatX: 20,
-      floatY: -20,
-      delay: 0
+      initialX: -120,
+      initialY: -60,
+      floatX: 40,
+      floatY: -30,
+      delay: 0,
+      size: 'w-20 h-20'
     },
     { 
       src: '/tiktok-6338432_1280.png', 
       alt: 'TikTok',
-      initialX: 150,
-      initialY: -80,
-      floatX: -30,
-      floatY: 15,
-      delay: 0.5
+      initialX: 180,
+      initialY: -100,
+      floatX: -50,
+      floatY: 25,
+      delay: 0.7,
+      size: 'w-18 h-18'
     },
     { 
       src: '/LinkedIn_2021.svg.png', 
       alt: 'LinkedIn',
-      initialX: -80,
-      initialY: 100,
-      floatX: 25,
-      floatY: -25,
-      delay: 1
+      initialX: -100,
+      initialY: 120,
+      floatX: 35,
+      floatY: -35,
+      delay: 1.4,
+      size: 'w-16 h-16'
     },
     { 
       src: '/HubSpot_Logo.svg.png', 
       alt: 'HubSpot',
-      initialX: 120,
-      initialY: 80,
-      floatX: -20,
-      floatY: 20,
-      delay: 1.5
+      initialX: 140,
+      initialY: 100,
+      floatX: -30,
+      floatY: 30,
+      delay: 2.1,
+      size: 'w-22 h-22'
     }
   ];
 
+  const sparkleVariants = {
+    animate: {
+      scale: [0, 1, 0],
+      rotate: [0, 180, 360],
+      opacity: [0, 1, 0],
+    }
+  };
+
   return (
     <>
-      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
-        {/* Animated Background Elements */}
+      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black">
+        {/* Enhanced Animated Background Elements */}
         <div className="absolute inset-0">
+          {/* Main Glow Effects */}
           <motion.div 
-            className="absolute top-1/4 right-10 w-20 h-20 bg-orange-500/20 rounded-full blur-xl"
+            className="absolute top-1/4 right-10 w-32 h-32 bg-orange-500/30 rounded-full blur-3xl"
             animate={{ 
-              scale: [1, 1.2, 1],
-              opacity: [0.3, 0.6, 0.3]
+              scale: [1, 1.5, 1.2, 1],
+              opacity: [0.3, 0.8, 0.5, 0.3],
+              x: [0, 20, -10, 0],
+              y: [0, -15, 10, 0]
             }}
             transition={{ 
-              duration: 4,
+              duration: 6,
               repeat: Infinity,
               ease: "easeInOut"
             }}
           />
           <motion.div 
-            className="absolute bottom-1/4 left-10 w-32 h-32 bg-orange-500/20 rounded-full blur-xl"
+            className="absolute bottom-1/4 left-10 w-40 h-40 bg-orange-500/25 rounded-full blur-3xl"
             animate={{ 
-              scale: [1.2, 1, 1.2],
-              opacity: [0.4, 0.2, 0.4]
+              scale: [1.2, 1, 1.4, 1.2],
+              opacity: [0.4, 0.2, 0.6, 0.4],
+              x: [0, -25, 15, 0],
+              y: [0, 20, -5, 0]
             }}
             transition={{ 
-              duration: 5,
+              duration: 7,
               repeat: Infinity,
               ease: "easeInOut"
             }}
+          />
+          
+          {/* Additional Glow Layers */}
+          <motion.div 
+            className="absolute top-1/2 left-1/2 w-96 h-96 bg-gradient-radial from-orange-500/10 to-transparent rounded-full blur-2xl"
+            animate={{ 
+              scale: [1, 1.3, 0.8, 1],
+              opacity: [0.1, 0.3, 0.1, 0.1],
+              rotate: [0, 90, 180, 360]
+            }}
+            transition={{ 
+              duration: 12,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+            style={{ transform: 'translate(-50%, -50%)' }}
           />
         </div>
 
-        {/* Floating Logos */}
+        {/* Floating Sparkles */}
+        <div className="absolute inset-0 pointer-events-none">
+          {[...Array(8)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute"
+              style={{
+                left: `${10 + i * 12}%`,
+                top: `${15 + (i % 3) * 25}%`
+              }}
+              variants={sparkleVariants}
+              animate="animate"
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                delay: i * 0.5,
+                ease: "easeInOut"
+              }}
+            >
+              <Sparkles className="w-4 h-4 text-orange-400/60" />
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Enhanced Floating Logos */}
         <div className="absolute inset-0 pointer-events-none">
           {floatingLogos.map((logo, index) => (
             <motion.div
               key={logo.alt}
-              className="absolute opacity-20 hover:opacity-40 transition-opacity duration-300"
+              className="absolute opacity-15 hover:opacity-50 transition-opacity duration-500"
               initial={{ 
                 x: logo.initialX, 
                 y: logo.initialY,
                 opacity: 0,
-                scale: 0.5,
-                rotate: -10
+                scale: 0.3,
+                rotate: -20,
+                filter: 'blur(4px)'
               }}
               animate={{ 
-                x: [logo.initialX, logo.initialX + logo.floatX, logo.initialX],
-                y: [logo.initialY, logo.initialY + logo.floatY, logo.initialY],
-                opacity: [0, 0.3, 0.2, 0.3],
-                scale: [0.5, 0.8, 0.6, 0.8],
-                rotate: [-10, 10, -5, 10]
+                x: [logo.initialX, logo.initialX + logo.floatX, logo.initialX - logo.floatX/2, logo.initialX],
+                y: [logo.initialY, logo.initialY + logo.floatY, logo.initialY - logo.floatY/2, logo.initialY],
+                opacity: [0, 0.4, 0.2, 0.4],
+                scale: [0.3, 1, 0.7, 1],
+                rotate: [-20, 20, -10, 20],
+                filter: ['blur(4px)', 'blur(0px)', 'blur(1px)', 'blur(0px)']
               }}
               transition={{
-                duration: 8,
+                duration: 10,
                 repeat: Infinity,
                 ease: "easeInOut",
                 delay: logo.delay
               }}
               style={{
-                left: `${20 + index * 20}%`,
-                top: `${15 + index * 15}%`
+                left: `${15 + index * 18}%`,
+                top: `${10 + index * 20}%`
               }}
             >
-              <img 
-                src={logo.src} 
-                alt={logo.alt}
-                className="w-16 h-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-500"
-              />
+              <motion.div
+                whileHover={{ 
+                  scale: 1.2, 
+                  rotate: 10,
+                  filter: 'brightness(1.2)'
+                }}
+                className="relative"
+              >
+                <img 
+                  src={logo.src} 
+                  alt={logo.alt}
+                  className={`${logo.size} object-contain filter grayscale hover:grayscale-0 transition-all duration-700 drop-shadow-2xl`}
+                />
+                {/* Glow effect around logos */}
+                <div className="absolute inset-0 bg-orange-500/20 rounded-full blur-xl scale-150 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
+              </motion.div>
             </motion.div>
           ))}
         </div>
 
         {/* Main Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left Side - Text Content */}
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+            {/* Left Side - Enhanced Text Content */}
             <motion.div 
-              className="space-y-8"
-              initial={{ opacity: 0, x: -50 }}
+              className="space-y-10"
+              initial={{ opacity: 0, x: -80 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 1, ease: "easeOut" }}
             >
               <div>
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
-                  className="inline-flex items-center space-x-2 bg-orange-500/10 border border-orange-500/20 rounded-full px-4 py-2 mb-6"
+                  initial={{ opacity: 0, y: 30, scale: 0.8 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ delay: 0.3, duration: 0.8 }}
+                  className="inline-flex items-center space-x-3 bg-gradient-to-r from-orange-500/20 to-orange-600/20 border border-orange-500/30 rounded-full px-6 py-3 mb-8 backdrop-blur-sm"
                 >
-                  <Zap className="h-4 w-4 text-orange-500" />
-                  <span className="text-orange-500 text-sm font-semibold">Digital Marketing Experts</span>
+                  <motion.div
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                  >
+                    <Zap className="h-5 w-5 text-orange-400" />
+                  </motion.div>
+                  <span className="text-orange-400 font-bold text-sm tracking-wide">DIGITAL MARKETING EXPERTS</span>
+                  <motion.div
+                    animate={{ scale: [1, 1.2, 1] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
+                    <Sparkles className="h-4 w-4 text-orange-400" />
+                  </motion.div>
                 </motion.div>
 
                 <motion.h1 
-                  className="text-6xl lg:text-8xl font-light text-white leading-none mb-8"
-                  initial={{ opacity: 0, y: 30 }}
+                  className="text-7xl lg:text-9xl font-light text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-100 to-orange-200 leading-none mb-10 tracking-tight"
+                  initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
+                  transition={{ delay: 0.5, duration: 1 }}
                 >
                   openMedia
                 </motion.h1>
                 
                 <motion.div 
-                  className="space-y-6 text-lg text-gray-300 max-w-lg"
-                  initial={{ opacity: 0, y: 20 }}
+                  className="space-y-8 max-w-xl"
+                  initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
+                  transition={{ delay: 0.7, duration: 0.8 }}
                 >
-                  <p className="text-2xl font-light text-white mb-4">
-                    We Take Your Brand to Mars! 🚀
-                  </p>
-                  <p>
-                    We're architects of digital success — Crafting 
-                    data-driven strategies that launch your business beyond the competition.
-                  </p>
-                  <div className="flex items-center space-x-6 text-sm">
-                    <div className="flex items-center space-x-2">
-                      <TrendingUp className="h-4 w-4 text-orange-500" />
-                      <span>200% ROI Growth</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Target className="h-4 w-4 text-orange-500" />
-                      <span>50+ European Clients</span>
-                    </div>
+                  <div className="relative">
+                    <motion.p 
+                      className="text-3xl font-light text-white mb-6 leading-tight"
+                      animate={{ 
+                        textShadow: [
+                          "0 0 0px rgba(249, 115, 22, 0)",
+                          "0 0 20px rgba(249, 115, 22, 0.3)",
+                          "0 0 0px rgba(249, 115, 22, 0)"
+                        ]
+                      }}
+                      transition={{ duration: 4, repeat: Infinity }}
+                    >
+                      We Take Your Brand to Mars! 
+                      <motion.span
+                        animate={{ rotate: [0, 15, -15, 0] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                        className="inline-block ml-2"
+                      >
+                        🚀
+                      </motion.span>
+                    </motion.p>
+                    
+                    {/* Rocket Trail Effect */}
+                    <motion.div
+                      className="absolute -right-8 top-2 w-20 h-1 bg-gradient-to-r from-orange-500 to-transparent opacity-50"
+                      animate={{ 
+                        scaleX: [0, 1, 0],
+                        opacity: [0, 0.8, 0]
+                      }}
+                      transition={{ duration: 3, repeat: Infinity, delay: 1 }}
+                    />
                   </div>
+                  
+                  <p className="text-xl text-gray-300 leading-relaxed">
+                    We're architects of digital success — Crafting 
+                    <span className="text-orange-400 font-semibold"> data-driven strategies</span> that 
+                    launch your business beyond the competition into the stratosphere.
+                  </p>
+                  
+                  <motion.div 
+                    className="flex items-center space-x-8 text-sm"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1, duration: 0.8 }}
+                  >
+                    <motion.div 
+                      className="flex items-center space-x-3 bg-green-500/10 border border-green-500/20 rounded-full px-4 py-2"
+                      whileHover={{ scale: 1.05, backgroundColor: "rgba(34, 197, 94, 0.2)" }}
+                    >
+                      <TrendingUp className="h-5 w-5 text-green-400" />
+                      <span className="text-green-400 font-bold">200% ROI Growth</span>
+                    </motion.div>
+                    <motion.div 
+                      className="flex items-center space-x-3 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-2"
+                      whileHover={{ scale: 1.05, backgroundColor: "rgba(59, 130, 246, 0.2)" }}
+                    >
+                      <Target className="h-5 w-5 text-blue-400" />
+                      <span className="text-blue-400 font-bold">50+ European Clients</span>
+                    </motion.div>
+                  </motion.div>
                 </motion.div>
               </div>
               
               <motion.div 
-                className="flex flex-col sm:flex-row gap-4"
-                initial={{ opacity: 0, y: 20 }}
+                className="flex flex-col sm:flex-row gap-6"
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 }}
+                transition={{ delay: 1.2, duration: 0.8 }}
               >
                 <motion.button 
                   onClick={() => setShowAppointment(true)}
-                  className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-xl flex items-center justify-center group"
-                  whileHover={{ scale: 1.05 }}
+                  className="relative bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-10 py-5 rounded-full font-bold transition-all duration-300 shadow-2xl shadow-orange-500/25 flex items-center justify-center group overflow-hidden"
+                  whileHover={{ 
+                    scale: 1.05,
+                    boxShadow: "0 25px 50px -12px rgba(249, 115, 22, 0.5)"
+                  }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Calendar className="h-5 w-5 mr-2 group-hover:rotate-12 transition-transform" />
-                  BOOK MEETING
+                  {/* Button Background Animation */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-orange-400 to-orange-500"
+                    initial={{ x: "-100%" }}
+                    whileHover={{ x: "0%" }}
+                    transition={{ duration: 0.3 }}
+                  />
+                  <Calendar className="h-6 w-6 mr-3 group-hover:rotate-12 transition-transform relative z-10" />
+                  <span className="relative z-10 tracking-wide">BOOK MEETING</span>
+                  
+                  {/* Sparkle Effect */}
+                  <motion.div
+                    className="absolute top-1 right-1"
+                    animate={{ 
+                      scale: [0, 1, 0],
+                      rotate: [0, 180, 360]
+                    }}
+                    transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+                  >
+                    <Sparkles className="h-3 w-3 text-white/80" />
+                  </motion.div>
                 </motion.button>
+                
                 <motion.button 
                   onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="bg-transparent border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-xl group"
-                  whileHover={{ scale: 1.05 }}
+                  className="relative bg-transparent border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-10 py-5 rounded-full font-bold transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-orange-500/25 group overflow-hidden"
+                  whileHover={{ 
+                    scale: 1.05,
+                    borderColor: "#f97316"
+                  }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <span className="group-hover:mr-2 transition-all">GET STARTED</span>
-                  <ArrowRight className="h-5 w-5 inline ml-2 group-hover:translate-x-1 transition-transform" />
+                  {/* Hover Fill Effect */}
+                  <motion.div
+                    className="absolute inset-0 bg-orange-500"
+                    initial={{ scale: 0, borderRadius: "50%" }}
+                    whileHover={{ scale: 1, borderRadius: "0%" }}
+                    transition={{ duration: 0.4 }}
+                  />
+                  <span className="relative z-10 group-hover:mr-3 transition-all tracking-wide">GET STARTED</span>
+                  <ArrowRight className="h-6 w-6 inline ml-3 group-hover:translate-x-2 transition-transform relative z-10" />
                 </motion.button>
               </motion.div>
             </motion.div>
 
-            {/* Right Side - Enhanced Visual Element */}
+            {/* Right Side - Ultra Enhanced Visual Element */}
             <motion.div 
               className="relative"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              initial={{ opacity: 0, x: 80, scale: 0.8 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
             >
               <div className="relative">
-                {/* Main Card */}
+                {/* Main Enhanced Card */}
                 <motion.div 
-                  className="bg-gradient-to-br from-orange-400 via-orange-500 to-red-500 rounded-3xl p-12 relative overflow-hidden"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
+                  className="bg-gradient-to-br from-orange-400 via-orange-500 to-red-600 rounded-3xl p-16 relative overflow-hidden shadow-2xl"
+                  whileHover={{ 
+                    scale: 1.03,
+                    rotateY: 5,
+                    rotateX: 5
+                  }}
+                  transition={{ duration: 0.4 }}
+                  style={{ transformStyle: "preserve-3d" }}
                 >
-                  {/* Animated Background Pattern */}
+                  {/* Enhanced Animated Background Pattern */}
                   <div className="absolute inset-0">
                     <motion.div 
-                      className="absolute inset-0 bg-white/10"
+                      className="absolute inset-0"
                       animate={{ 
                         background: [
-                          "radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%)",
-                          "radial-gradient(circle at 80% 50%, rgba(255,255,255,0.1) 0%, transparent 50%)",
-                          "radial-gradient(circle at 50% 20%, rgba(255,255,255,0.1) 0%, transparent 50%)",
-                          "radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%)"
+                          "radial-gradient(circle at 20% 50%, rgba(255,255,255,0.15) 0%, transparent 50%)",
+                          "radial-gradient(circle at 80% 50%, rgba(255,255,255,0.15) 0%, transparent 50%)",
+                          "radial-gradient(circle at 50% 20%, rgba(255,255,255,0.15) 0%, transparent 50%)",
+                          "radial-gradient(circle at 50% 80%, rgba(255,255,255,0.15) 0%, transparent 50%)",
+                          "radial-gradient(circle at 20% 50%, rgba(255,255,255,0.15) 0%, transparent 50%)"
                         ]
                       }}
-                      transition={{ duration: 8, repeat: Infinity }}
+                      transition={{ duration: 10, repeat: Infinity }}
+                    />
+                    
+                    {/* Additional Pattern Layers */}
+                    <motion.div
+                      className="absolute inset-0 opacity-30"
+                      animate={{
+                        backgroundImage: [
+                          "linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%)",
+                          "linear-gradient(135deg, rgba(255,255,255,0.1) 25%, transparent 25%)",
+                          "linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%)"
+                        ]
+                      }}
+                      transition={{ duration: 6, repeat: Infinity }}
                     />
                   </div>
 
-                  {/* Abstract geometric shapes */}
+                  {/* Multiple Rotating Elements */}
                   <div className="absolute inset-0 flex items-center justify-center">
                     <motion.div 
-                      className="w-80 h-80 bg-white/20 rounded-full"
+                      className="w-96 h-96 border-2 border-white/30 rounded-full"
                       animate={{ 
                         rotate: 360,
                         scale: [1, 1.1, 1]
+                      }}
+                      transition={{ 
+                        rotate: { duration: 25, repeat: Infinity, ease: "linear" },
+                        scale: { duration: 5, repeat: Infinity, ease: "easeInOut" }
+                      }}
+                    />
+                    <motion.div 
+                      className="absolute w-80 h-80 border border-white/20 rounded-full"
+                      animate={{ 
+                        rotate: -360,
+                        scale: [1.1, 1, 1.1]
                       }}
                       transition={{ 
                         rotate: { duration: 20, repeat: Infinity, ease: "linear" },
                         scale: { duration: 4, repeat: Infinity, ease: "easeInOut" }
                       }}
                     />
+                    <motion.div 
+                      className="absolute w-64 h-64 bg-white/10 rounded-full backdrop-blur-sm"
+                      animate={{ 
+                        scale: [1, 1.2, 1],
+                        opacity: [0.1, 0.3, 0.1]
+                      }}
+                      transition={{ 
+                        duration: 6,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    />
                   </div>
                   
-                  {/* Content overlay */}
+                  {/* Enhanced Content overlay */}
                   <div className="relative z-10 text-white">
-                    <div className="text-right mb-8">
+                    <div className="text-right mb-12">
                       <motion.div 
-                        className="text-sm font-medium mb-2"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 1 }}
+                        className="text-lg font-bold mb-3 tracking-wider"
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 1.5 }}
                       >
                         DIGITAL MARKETING
                       </motion.div>
                       <motion.div 
-                        className="text-xs opacity-80"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 1.2 }}
+                        className="text-sm opacity-90 tracking-widest"
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 1.7 }}
                       >
                         EXPERTS • 2025
                       </motion.div>
                     </div>
                     
                     <motion.div 
-                      className="absolute bottom-8 right-8"
+                      className="absolute bottom-12 right-12"
                       animate={{ 
-                        x: [0, 5, 0],
-                        y: [0, -5, 0]
+                        x: [0, 10, 0],
+                        y: [0, -10, 0],
+                        rotate: [0, 5, 0]
                       }}
                       transition={{ 
-                        duration: 2,
+                        duration: 3,
                         repeat: Infinity,
                         ease: "easeInOut"
                       }}
                     >
-                      <ArrowRight className="h-8 w-8 text-white" />
+                      <div className="relative">
+                        <ArrowRight className="h-10 w-10 text-white drop-shadow-lg" />
+                        <motion.div
+                          className="absolute -inset-2 bg-white/20 rounded-full blur-md"
+                          animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.6, 0.3] }}
+                          transition={{ duration: 2, repeat: Infinity }}
+                        />
+                      </div>
                     </motion.div>
                   </div>
 
-                  {/* Floating Elements Inside Card */}
-                  <motion.div
-                    className="absolute top-4 left-4 w-3 h-3 bg-white/40 rounded-full"
-                    animate={{ 
-                      scale: [1, 1.5, 1],
-                      opacity: [0.4, 0.8, 0.4]
-                    }}
-                    transition={{ 
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  />
-                  <motion.div
-                    className="absolute bottom-16 left-8 w-2 h-2 bg-white/60 rounded-full"
-                    animate={{ 
-                      scale: [1, 1.3, 1],
-                      opacity: [0.6, 1, 0.6]
-                    }}
-                    transition={{ 
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: 1
-                    }}
-                  />
+                  {/* Enhanced Floating Elements Inside Card */}
+                  {[...Array(6)].map((_, i) => (
+                    <motion.div
+                      key={i}
+                      className={`absolute w-${2 + i % 3} h-${2 + i % 3} bg-white/${30 + i * 10} rounded-full`}
+                      style={{
+                        left: `${20 + i * 15}%`,
+                        top: `${15 + i * 12}%`
+                      }}
+                      animate={{ 
+                        scale: [1, 1.5, 1],
+                        opacity: [0.4, 0.8, 0.4],
+                        y: [0, -10, 0]
+                      }}
+                      transition={{ 
+                        duration: 3 + i * 0.5,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: i * 0.3
+                      }}
+                    />
+                  ))}
                 </motion.div>
 
-                {/* Floating Cards Around Main Card */}
+                {/* Enhanced Floating Cards Around Main Card */}
                 <motion.div
-                  className="absolute -top-4 -right-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 text-white"
+                  className="absolute -top-6 -right-6 bg-gradient-to-br from-green-500/20 to-green-600/20 backdrop-blur-md border border-green-500/30 rounded-2xl p-6 text-white shadow-2xl"
                   animate={{ 
-                    y: [0, -10, 0],
-                    rotate: [0, 2, 0]
+                    y: [0, -15, 0],
+                    rotate: [0, 3, 0],
+                    scale: [1, 1.05, 1]
                   }}
                   transition={{ 
-                    duration: 4,
+                    duration: 5,
                     repeat: Infinity,
                     ease: "easeInOut"
                   }}
                 >
-                  <div className="text-xs font-semibold">ROI</div>
-                  <div className="text-lg font-bold text-orange-400">+200%</div>
+                  <div className="text-xs font-bold text-green-400 mb-1">ROI GROWTH</div>
+                  <div className="text-2xl font-black text-white">+200%</div>
+                  <motion.div
+                    className="absolute -top-1 -right-1"
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                  >
+                    <TrendingUp className="h-4 w-4 text-green-400" />
+                  </motion.div>
                 </motion.div>
 
                 <motion.div
-                  className="absolute -bottom-4 -left-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 text-white"
+                  className="absolute -bottom-6 -left-6 bg-gradient-to-br from-blue-500/20 to-blue-600/20 backdrop-blur-md border border-blue-500/30 rounded-2xl p-6 text-white shadow-2xl"
                   animate={{ 
-                    y: [0, 10, 0],
-                    rotate: [0, -2, 0]
+                    y: [0, 15, 0],
+                    rotate: [0, -3, 0],
+                    scale: [1, 1.05, 1]
                   }}
                   transition={{ 
-                    duration: 3,
+                    duration: 4,
                     repeat: Infinity,
                     ease: "easeInOut",
                     delay: 1
                   }}
                 >
-                  <div className="text-xs font-semibold">CLIENTS</div>
-                  <div className="text-lg font-bold text-orange-400">50+</div>
+                  <div className="text-xs font-bold text-blue-400 mb-1">CLIENTS</div>
+                  <div className="text-2xl font-black text-white">50+</div>
+                  <motion.div
+                    className="absolute -top-1 -right-1"
+                    animate={{ scale: [1, 1.2, 1] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
+                    <Target className="h-4 w-4 text-blue-400" />
+                  </motion.div>
+                </motion.div>
+
+                {/* New Floating Card */}
+                <motion.div
+                  className="absolute top-1/2 -left-8 bg-gradient-to-br from-purple-500/20 to-purple-600/20 backdrop-blur-md border border-purple-500/30 rounded-2xl p-4 text-white shadow-2xl"
+                  animate={{ 
+                    x: [0, -10, 0],
+                    rotate: [0, 2, 0],
+                    scale: [1, 1.03, 1]
+                  }}
+                  transition={{ 
+                    duration: 6,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 2
+                  }}
+                >
+                  <div className="text-xs font-bold text-purple-400 mb-1">COUNTRIES</div>
+                  <div className="text-xl font-black text-white">12+</div>
+                  <motion.div
+                    className="absolute -top-1 -right-1"
+                    animate={{ rotate: [0, 360] }}
+                    transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                  >
+                    <Rocket className="h-4 w-4 text-purple-400" />
+                  </motion.div>
                 </motion.div>
               </div>
             </motion.div>
           </div>
 
-          {/* Bottom Section */}
+          {/* Enhanced Bottom Section */}
           <motion.div 
-            className="mt-20 text-center"
-            initial={{ opacity: 0, y: 30 }}
+            className="mt-24 text-center"
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8 }}
+            transition={{ delay: 1.5, duration: 0.8 }}
           >
-            <div className="inline-flex items-center space-x-2 text-gray-400">
-              <span className="text-sm">A digital marketing agency</span>
-              <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
-              <span className="text-sm">based in Europe.</span>
+            <div className="inline-flex items-center space-x-4 text-gray-400">
+              <motion.div
+                className="w-16 h-px bg-gradient-to-r from-transparent via-orange-500 to-transparent"
+                animate={{ scaleX: [0, 1, 0] }}
+                transition={{ duration: 3, repeat: Infinity }}
+              />
+              <span className="text-sm font-medium">A digital marketing agency</span>
+              <motion.div 
+                className="w-3 h-3 bg-orange-500 rounded-full"
+                animate={{ 
+                  scale: [1, 1.3, 1],
+                  opacity: [0.5, 1, 0.5]
+                }}
+                transition={{ duration: 2, repeat: Infinity }}
+              />
+              <span className="text-sm font-medium">based in Europe.</span>
+              <motion.div
+                className="w-16 h-px bg-gradient-to-l from-transparent via-orange-500 to-transparent"
+                animate={{ scaleX: [0, 1, 0] }}
+                transition={{ duration: 3, repeat: Infinity, delay: 1.5 }}
+              />
             </div>
           </motion.div>
         </div>
 
-        {/* Background Pattern */}
+        {/* Enhanced Background Pattern */}
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-20 w-96 h-96 border border-white/10 rounded-full"></div>
-          <div className="absolute bottom-20 right-20 w-64 h-64 border border-white/10 rounded-full"></div>
+          <motion.div 
+            className="absolute top-20 left-20 w-96 h-96 border border-white/20 rounded-full"
+            animate={{ rotate: 360, scale: [1, 1.1, 1] }}
+            transition={{ rotate: { duration: 30, repeat: Infinity, ease: "linear" }, scale: { duration: 8, repeat: Infinity } }}
+          />
+          <motion.div 
+            className="absolute bottom-20 right-20 w-64 h-64 border border-white/20 rounded-full"
+            animate={{ rotate: -360, scale: [1.1, 1, 1.1] }}
+            transition={{ rotate: { duration: 25, repeat: Infinity, ease: "linear" }, scale: { duration: 6, repeat: Infinity } }}
+          />
         </div>
       </section>
 
