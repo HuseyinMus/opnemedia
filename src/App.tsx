@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import Partners from './components/Partners';
 import Services from './components/Services';
 import CaseStudies from './components/CaseStudies';
 import Blog from './components/Blog';
@@ -237,6 +238,7 @@ Success on LinkedIn requires patience, consistency, and genuine value creation. 
         <Navbar onSearchClick={() => setShowSearch(true)} />
         <Hero />
         <About />
+        <Partners />
         <Services />
         <CaseStudies />
         <Blog blogPosts={blogPosts} onReadMore={setSelectedPost} />
