@@ -80,7 +80,7 @@ const Partners = () => {
             className="inline-block mb-4"
           >
             <span className="bg-orange-500/10 text-orange-500 px-4 py-2 rounded-full text-sm font-semibold border border-orange-500/20">
-              Partnerlerimiz
+              Our Partners
             </span>
           </motion.div>
           
@@ -88,15 +88,15 @@ const Partners = () => {
             variants={itemVariants}
             className="text-4xl md:text-6xl font-light text-white mb-6"
           >
-            Güvenilir Ortaklıklar
+            Trusted Partnerships
           </motion.h2>
           
           <motion.p 
             variants={itemVariants}
             className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
-            Dünyanın en büyük dijital pazarlama platformlarının resmi partneri olarak, 
-            size en güncel araçlar ve stratejilerle hizmet veriyoruz.
+            As official partners of the world's leading digital marketing platforms, 
+            we provide you with the latest tools and strategies for success.
           </motion.p>
         </motion.div>
 
@@ -114,19 +114,26 @@ const Partners = () => {
             >
               <div className="bg-white/5 backdrop-blur-sm border border-gray-800/50 rounded-2xl p-8 h-full transition-all duration-500 hover:bg-white/10 hover:border-orange-500/30 hover:shadow-2xl hover:shadow-orange-500/10 hover:-translate-y-2">
                 <div className="flex flex-col items-center text-center h-full">
-                  <div className="relative mb-6 w-full h-20 flex items-center justify-center">
+                  {/* Fixed Logo Container */}
+                  <div className="relative mb-6 w-full h-16 flex items-center justify-center bg-white/90 rounded-xl p-4 group-hover:bg-white transition-all duration-300">
                     <img
                       src={partner.logo}
                       alt={partner.name}
-                      className="max-w-full max-h-full object-contain filter brightness-90 group-hover:brightness-110 transition-all duration-300 group-hover:scale-105"
+                      className="max-w-full max-h-full object-contain filter grayscale-0 group-hover:scale-105 transition-all duration-300"
+                      style={{
+                        maxWidth: '120px',
+                        maxHeight: '40px',
+                        width: 'auto',
+                        height: 'auto'
+                      }}
                     />
                   </div>
                   
                   <div className="mt-auto">
-                    <h3 className="text-white font-semibold mb-2 group-hover:text-orange-500 transition-colors duration-300">
+                    <h3 className="text-white font-semibold mb-2 group-hover:text-orange-500 transition-colors duration-300 text-sm">
                       {partner.name}
                     </h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">
+                    <p className="text-gray-400 text-xs leading-relaxed">
                       {partner.description}
                     </p>
                   </div>
@@ -148,7 +155,7 @@ const Partners = () => {
         >
           <div className="inline-flex items-center space-x-3 text-gray-400">
             <div className="w-12 h-px bg-gradient-to-r from-transparent to-orange-500"></div>
-            <span className="text-sm font-medium">Resmi Sertifikalı Partnerlikler</span>
+            <span className="text-sm font-medium">Official Certified Partnerships</span>
             <div className="w-12 h-px bg-gradient-to-l from-transparent to-orange-500"></div>
           </div>
         </motion.div>
