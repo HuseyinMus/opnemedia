@@ -90,4 +90,3 @@ Submitted at: ${data.timestamp}
     console.log('Admin notification failed:', error);
   }
 };
-};
