@@ -1,4 +1,20 @@
-const [blogPosts, setBlogPosts] = useState([
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import About from './components/About';
+import Services from './components/Services';
+import CaseStudies from './components/CaseStudies';
+import Blog from './components/Blog';
+import BlogPost from './components/BlogPost';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import ToastContainer from './components/ToastNotification';
+import NewsletterPopup from './components/NewsletterPopup';
+import SearchModal from './components/SearchModal';
+
+function App() {
+  const [blogPosts, setBlogPosts] = useState([
     {
       id: 1,
       title: "Digital Marketing Trends for 2025: European Perspective",
