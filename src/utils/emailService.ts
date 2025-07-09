@@ -11,7 +11,7 @@ export interface EmailData {
 export const sendEmail = async (data: EmailData): Promise<boolean> => {
   try {
     // Send email to heser000@gmail.com
-    const response = await fetch('https://formspree.io/f/heser000@gmail.com', {
+    const response = await fetch('https://formspree.io/f/xpwagkqr', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -65,7 +65,7 @@ export const sendNotificationToAdmin = async (data: EmailData): Promise<void> =>
   // Additional notification methods can be added here
   try {
     // Send a simple notification email to admin
-    await fetch('https://formspree.io/f/heser000@gmail.com', {
+    await fetch('https://formspree.io/f/xpwagkqr', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
