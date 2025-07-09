@@ -551,7 +551,7 @@ const Hero = () => {
 
                 {/* New Conversion Rate Card */}
                 <motion.div
-                  className="absolute top-1/2 -left-12 bg-gradient-to-br from-purple-500/20 to-purple-600/20 backdrop-blur-md border border-purple-500/30 rounded-2xl p-5 text-white shadow-2xl min-w-[130px] transform -translate-y-1/2"
+                  className="absolute top-1/4 -left-16 bg-gradient-to-br from-purple-500/20 to-purple-600/20 backdrop-blur-md border border-purple-500/30 rounded-2xl p-5 text-white shadow-2xl min-w-[130px]"
                   animate={{ 
                     x: [0, -10, 0],
                     rotate: [0, 2, 0],
