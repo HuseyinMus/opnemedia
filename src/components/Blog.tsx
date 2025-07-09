@@ -1,4 +1,3 @@
-import React from 'react';
 import React, { useState } from 'react';
 import { Calendar, ArrowRight, Clock } from 'lucide-react';
 
@@ -34,10 +33,10 @@ const Blog: React.FC<BlogProps> = ({ blogPosts, onReadMore }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-light text-white mb-6">
-            Dijital Pazarlama İçgörüleri
+            Latest Insights
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Avrupa işletmeleri için özel olarak hazırlanmış en güncel dijital pazarlama trendleri, stratejileri ve içgörüleri.
+            Stay updated with the latest digital marketing trends, strategies, and insights specifically for European businesses.
           </p>
         </div>
 
@@ -53,7 +52,7 @@ const Blog: React.FC<BlogProps> = ({ blogPosts, onReadMore }) => {
                   : 'bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white'
               }`}
             >
-              {category === 'all' ? 'Tümü' : category}
+              {category === 'all' ? 'All' : category}
             </button>
           ))}
         </div>
@@ -114,7 +113,7 @@ const Blog: React.FC<BlogProps> = ({ blogPosts, onReadMore }) => {
               }}
               className="inline-flex items-center px-8 py-4 bg-gray-800 hover:bg-gray-700 text-white font-semibold rounded-lg transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-xl border border-gray-700 hover:border-orange-500/50"
             >
-              Daha Fazla Makale
+              View More Articles
               <ArrowRight className="ml-2 h-5 w-5" />
             </button>
           </div>
@@ -124,15 +123,15 @@ const Blog: React.FC<BlogProps> = ({ blogPosts, onReadMore }) => {
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           <div className="text-center p-6 bg-gray-900 rounded-2xl border border-gray-800">
             <div className="text-3xl font-bold text-orange-500 mb-2">{publishedPosts.length}</div>
-            <div className="text-gray-300">Toplam Makale</div>
+            <div className="text-gray-300">Total Articles</div>
           </div>
           <div className="text-center p-6 bg-gray-900 rounded-2xl border border-gray-800">
             <div className="text-3xl font-bold text-blue-500 mb-2">{categories.length - 1}</div>
-            <div className="text-gray-300">Kategori</div>
+            <div className="text-gray-300">Categories</div>
           </div>
           <div className="text-center p-6 bg-gray-900 rounded-2xl border border-gray-800">
             <div className="text-3xl font-bold text-green-500 mb-2">50K+</div>
-            <div className="text-gray-300">Aylık Okuyucu</div>
+            <div className="text-gray-300">Monthly Readers</div>
           </div>
         </div>
         <div className="mt-16 text-center">
@@ -140,7 +139,7 @@ const Blog: React.FC<BlogProps> = ({ blogPosts, onReadMore }) => {
             onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
             className="inline-flex items-center px-8 py-4 bg-gray-900 hover:bg-gray-800 text-white font-semibold rounded-lg transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-xl border border-gray-700 hover:border-orange-500/50"
           >
-            Tüm Makaleleri Görüntüle
+            View All Articles
             <ArrowRight className="ml-2 h-5 w-5" />
           </button>
         </div>

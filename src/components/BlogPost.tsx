@@ -29,7 +29,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ post, onBack }) => {
             className="flex items-center text-gray-300 hover:text-orange-500 transition-colors mb-6 group"
           >
             <ArrowLeft className="h-5 w-5 mr-2 group-hover:-translate-x-1 transition-transform" />
-            Blog'a Geri Dön
+            Back to Blog
           </button>
           
           <div className="mb-4">
@@ -53,7 +53,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ post, onBack }) => {
             </div>
             <div className="flex items-center">
               <User className="h-4 w-4 mr-2" />
-              <span>openMedia Ekibi</span>
+              <span>openMedia Team</span>
             </div>
           </div>
         </div>
@@ -120,9 +120,9 @@ const BlogPost: React.FC<BlogPostProps> = ({ post, onBack }) => {
 
         {/* Call to Action */}
         <div className="mt-16 p-8 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl text-white text-center">
-          <h3 className="text-2xl font-semibold mb-4">Dijital Pazarlamanızı Dönüştürmeye Hazır mısınız?</h3>
+          <h3 className="text-2xl font-semibold mb-4">Ready to Transform Your Digital Marketing?</h3>
           <p className="text-orange-100 mb-6">
-            İşletmenizin ihtiyaçlarına özel uzman tavsiyeleri alın. Benzer sonuçları nasıl elde edebileceğinizi birlikte konuşalım.
+            Get expert advice tailored to your business needs. Let's discuss how we can help you achieve similar results.
           </p>
           <button
             onClick={() => {
@@ -133,7 +133,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ post, onBack }) => {
             }}
             className="bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
           >
-            Ücretsiz Danışmanlık Al
+            Get Free Consultation
           </button>
         </div>
       </div>
