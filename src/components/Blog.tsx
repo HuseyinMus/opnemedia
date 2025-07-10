@@ -15,7 +15,7 @@ interface BlogPost {
 
 interface BlogProps {
   blogPosts: BlogPost[];
-  onReadMore: (id: number) => void;
+  onReadMore: (post: BlogPost) => void;
 }
 
 const Blog: React.FC<BlogProps> = ({ blogPosts, onReadMore }) => {
@@ -92,7 +92,7 @@ const Blog: React.FC<BlogProps> = ({ blogPosts, onReadMore }) => {
                 </p>
                 
                 <button 
-                  onClick={() => onReadMore(post.id)}
+                  onClick={() => onReadMore(post)}
                   className="inline-flex items-center text-orange-500 hover:text-orange-400 font-semibold transition-colors group"
                 >
                   Read More
