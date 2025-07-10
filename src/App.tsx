@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Services from './components/Services';
@@ -521,7 +522,7 @@ Marketing automation success for European SMBs comes from starting simple, focus
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <Header onSearch={() => setShowSearch(true)} />
+        <Navbar onSearch={() => setShowSearch(true)} />
         <Hero />
         <About />
         <Services />
