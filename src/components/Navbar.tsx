@@ -20,8 +20,8 @@ const Navbar: React.FC<NavbarProps> = ({ onSearchClick }) => {
   }, []);
 
   const navItems = [
-    { name: 'HİZMETLER', href: '#services' },
-    { name: 'FİYATLAR', href: '#pricing' },
+    { name: 'SERVICES', href: '#services' },
+    { name: 'ABOUT', href: '#about' },
     { name: 'BLOG', href: '#blog' },
     { name: 'CONTACT', href: '#contact' },
   ];

@@ -531,7 +531,6 @@ Marketing automation success for European SMBs comes from starting simple, focus
         <Services />
         <CaseStudies />
         <Partners />
-        <Pricing />
         <Blog blogPosts={blogPosts} onReadMore={setSelectedPost} />
         <FAQ />
         <Contact onSubmitSuccess={() => success('Message sent successfully!')} />

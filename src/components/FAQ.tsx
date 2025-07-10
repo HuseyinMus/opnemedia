@@ -8,36 +8,36 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: "Dijital pazarlama hizmetleriniz hangi ülkeleri kapsıyor?",
-      answer: "Avrupa'nın tamamında hizmet veriyoruz. Almanya, Fransa, İtalya, Hollanda, İspanya, İngiltere ve diğer AB ülkelerinde yerel pazar bilgimizle stratejiler geliştiriyoruz."
+      question: "Which countries do your digital marketing services cover?",
+      answer: "We serve throughout Europe. We develop strategies with our local market knowledge in Germany, France, Italy, Netherlands, Spain, UK and other EU countries."
     },
     {
-      question: "Sonuçları ne kadar sürede görmeye başlarım?",
-      answer: "Google Ads kampanyalarında ilk sonuçları 1-2 hafta içinde, SEO çalışmalarında 3-6 ay içinde, sosyal medya pazarlamasında ise 2-4 hafta içinde görmeye başlarsınız. Her proje farklıdır ve detaylı analiz sonrası net zaman çizelgesi sunuyoruz."
+      question: "How soon will I start seeing results?",
+      answer: "You'll start seeing first results in Google Ads campaigns within 1-2 weeks, SEO work within 3-6 months, and social media marketing within 2-4 weeks. Each project is different and we provide a clear timeline after detailed analysis."
     },
     {
-      question: "Hangi sektörlerde deneyiminiz var?",
-      answer: "E-ticaret, teknoloji, sağlık, eğitim, finans, turizm, moda ve B2B hizmetler dahil olmak üzere geniş bir sektör yelpazesinde deneyimimiz bulunuyor. Her sektörün kendine özgü dinamiklerini anlıyor ve buna uygun stratejiler geliştiriyoruz."
+      question: "What industries do you have experience in?",
+      answer: "We have experience in a wide range of sectors including e-commerce, technology, healthcare, education, finance, tourism, fashion and B2B services. We understand the unique dynamics of each sector and develop appropriate strategies."
     },
     {
-      question: "GDPR uyumluluğu nasıl sağlıyorsunuz?",
-      answer: "Tüm dijital pazarlama faaliyetlerimizde GDPR kurallarına tam uyum sağlıyoruz. Veri toplama, işleme ve saklama süreçlerimiz AB mevzuatına uygun olarak tasarlanmıştır. Müşterilerimize de GDPR uyumlu pazarlama stratejileri konusunda danışmanlık veriyoruz."
+      question: "How do you ensure GDPR compliance?",
+      answer: "We ensure full compliance with GDPR rules in all our digital marketing activities. Our data collection, processing and storage processes are designed in accordance with EU legislation. We also advise our clients on GDPR-compliant marketing strategies."
     },
     {
-      question: "Aylık raporlama nasıl yapılıyor?",
-      answer: "Her ay detaylı performans raporları hazırlıyoruz. Bu raporlarda trafik analizi, dönüşüm oranları, ROI hesaplamaları, rekabet analizi ve gelecek ay önerileri yer alıyor. Ayrıca aylık görüşmelerle sonuçları birlikte değerlendiriyoruz."
+      question: "How is monthly reporting done?",
+      answer: "We prepare detailed performance reports every month. These reports include traffic analysis, conversion rates, ROI calculations, competitive analysis and next month's recommendations. We also evaluate the results together with monthly meetings."
     },
     {
-      question: "Minimum sözleşme süresi var mı?",
-      answer: "Genellikle 6 aylık minimum sözleşme süresi uyguluyoruz çünkü dijital pazarlama sonuçları zaman içinde gelişir. Ancak proje bazlı çalışmalar için daha kısa süreli anlaşmalar da yapabiliyoruz. İlk 30 gün deneme süresi sunuyoruz."
+      question: "Is there a minimum contract period?",
+      answer: "We usually apply a 6-month minimum contract period because digital marketing results develop over time. However, we can also make shorter-term agreements for project-based work. We offer a 30-day trial period."
     },
     {
-      question: "Bütçem sınırlı, hangi hizmetlerle başlamalıyım?",
-      answer: "Sınırlı bütçeli işletmeler için öncelikle Google Ads ve sosyal medya pazarlama ile başlamanızı öneriyoruz. Bu kanallar hızlı sonuç verir ve bütçenizi kontrol edebilirsiniz. Başarılı sonuçlar aldıktan sonra SEO ve diğer kanallara yatırım yapabilirsiniz."
+      question: "My budget is limited, which services should I start with?",
+      answer: "For businesses with limited budgets, we recommend starting with Google Ads and social media marketing first. These channels deliver quick results and you can control your budget. After achieving successful results, you can invest in SEO and other channels."
     },
     {
-      question: "Rakip analizi yapıyor musunuz?",
-      answer: "Evet, kapsamlı rakip analizi hizmetimiz var. Rakiplerinizin dijital stratejilerini, kullandıkları anahtar kelimeleri, reklam metinlerini ve sosyal medya performanslarını analiz ediyoruz. Bu bilgilerle size rekabet avantajı sağlayacak stratejiler geliştiriyoruz."
+      question: "Do you do competitor analysis?",
+      answer: "Yes, we have comprehensive competitor analysis services. We analyze your competitors' digital strategies, keywords they use, ad copy and social media performance. With this information, we develop strategies that will give you a competitive advantage."
     }
   ];
 
@@ -51,14 +51,14 @@ const FAQ = () => {
         <AnimatedSection className="text-center mb-16">
           <div className="inline-block mb-4">
             <span className="bg-orange-500/10 text-orange-500 px-4 py-2 rounded-full text-sm font-semibold border border-orange-500/20">
-              Sık Sorulan Sorular
+              Frequently Asked Questions
             </span>
           </div>
           <h2 className="text-4xl md:text-6xl font-light text-white mb-6">
-            Merak Ettikleriniz
+            Your Questions Answered
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Dijital pazarlama hizmetlerimiz hakkında en çok sorulan soruların yanıtlarını burada bulabilirsiniz.
+            Find answers to the most frequently asked questions about our digital marketing services.
           </p>
         </AnimatedSection>
 
@@ -114,17 +114,17 @@ const FAQ = () => {
         <AnimatedSection className="text-center mt-16">
           <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-semibold mb-4">
-              Sorunuz burada yok mu?
+              Don't see your question here?
             </h3>
             <p className="text-orange-100 mb-6">
-              Dijital pazarlama konusunda aklınıza takılan her şeyi sorabilirsiniz. 
-              Uzmanlarımız size yardımcı olmaktan mutluluk duyar.
+              You can ask anything about digital marketing that comes to mind. 
+              Our experts are happy to help you.
             </p>
             <button
               onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
             >
-              Bize Sorun
+              Ask Us
             </button>
           </div>
         </AnimatedSection>

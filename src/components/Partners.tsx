@@ -80,7 +80,7 @@ const Partners = () => {
             className="inline-block mb-4"
           >
             <span className="bg-orange-500/10 text-orange-500 px-4 py-2 rounded-full text-sm font-semibold border border-orange-500/20">
-              Ortaklarımız
+              Our Partners
             </span>
           </motion.div>
           
@@ -88,15 +88,15 @@ const Partners = () => {
             variants={itemVariants}
             className="text-4xl md:text-6xl font-light text-white mb-6"
           >
-            Güvenilir Ortaklıklar
+            Trusted Partnerships
           </motion.h2>
           
           <motion.p 
             variants={itemVariants}
             className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
-            Dünyanın önde gelen dijital pazarlama platformlarının resmi ortağı olarak, 
-            size en güncel araçlar ve başarı stratejileri sunuyoruz.
+            As an official partner of the world's leading digital marketing platforms, 
+            we provide you with the latest tools and proven success strategies.
           </motion.p>
         </motion.div>
 
@@ -155,7 +155,7 @@ const Partners = () => {
         >
           <div className="inline-flex items-center space-x-3 text-gray-400">
             <div className="w-12 h-px bg-gradient-to-r from-transparent to-orange-500"></div>
-            <span className="text-sm font-medium">Resmi Sertifikalı Ortaklıklar</span>
+            <span className="text-sm font-medium">Official Certified Partnerships</span>
             <div className="w-12 h-px bg-gradient-to-l from-transparent to-orange-500"></div>
           </div>
         </motion.div>
