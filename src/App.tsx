@@ -9,6 +9,9 @@ import Blog from './components/Blog';
 import BlogPost from './components/BlogPost';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Partners from './components/Partners';
+import FAQ from './components/FAQ';
+import Pricing from './components/Pricing';
 import ToastContainer from './components/ToastNotification';
 import NewsletterPopup from './components/NewsletterPopup';
 import SearchModal from './components/SearchModal';
@@ -527,7 +530,10 @@ Marketing automation success for European SMBs comes from starting simple, focus
         <About />
         <Services />
         <CaseStudies />
+        <Partners />
+        <Pricing />
         <Blog blogPosts={blogPosts} onReadMore={setSelectedPost} />
+        <FAQ />
         <Contact onSubmitSuccess={() => success('Message sent successfully!')} />
         <Footer />
       </motion.div>
